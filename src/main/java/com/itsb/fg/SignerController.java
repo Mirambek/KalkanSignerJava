@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.itsb.fg.controllers;
+package com.itsb.fg;
 
 import biz.Signer;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,12 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
  * @author miram
  */
 @RestController
-@RequestMapping("signer")
 public class SignerController {
     @PostMapping
-    public String post(@RequestBody String sigingData){
+    public String post(@RequestBody String singingData){
         Signer s=new Signer();
-        
-        return s.Sign(sigingData);
+        System.out.println("Incoming" +singingData);
+        return s.Sign(singingData);
     }    
 }
